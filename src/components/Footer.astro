@@ -2,8 +2,6 @@
 import { SITE_TITLE, SITE_EMAIL } from "../consts";
 const { theme } = Astro.props;
 import { SITE_NAME } from "../consts";
-const date = new Date();
-const year = date.getFullYear();
 ---
 
 <div class:list={["footer-main", { "footer-dark": theme === "dark" }]}>
@@ -17,9 +15,9 @@ const year = date.getFullYear();
           </div>
 
           <div class="item products">
-            <div class="item-title">作品</div>
+            <div class="item-title">Have Fun</div>
             <a href="/" target="_blank">本站博客</a>
-            <a href="https://the.top" target="_blank">TOP Link</a> 
+            <a href="https://gpt.insyent.today" target="_blank">GPT</a> 
           </div>
 
           <div class="item community">
@@ -39,8 +37,7 @@ const year = date.getFullYear();
       </div>
       <div class="bottom">
         <div class="copyright">
-          &copy; {`${year} ${SITE_NAME}`} 
-          <a href="//github.com/austin2035/astro-air-blog">Astro-air-blog</a>
+          {`${SITE_NAME}`} 
         </div>
       </div>
     </div>

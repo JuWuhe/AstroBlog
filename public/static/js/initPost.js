@@ -105,16 +105,19 @@ function renderStyle(sign, percent) {
 
 function syntaxHighlight() {
   var script = document.createElement("script");
-  script.src = "//cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js";
+  // script.src = "//cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js";
+  script.src = "/static/highlight/highlight.min.js";
   document.head.appendChild(script);
 
   var styleLight = document.createElement("link");
   styleLight.rel = "stylesheet";
-  styleLight.href = "//cdn.staticfile.org/highlight.js/11.7.0/styles/stackoverflow-light.min.css";
+  // styleLight.href = "//cdn.staticfile.org/highlight.js/11.7.0/styles/stackoverflow-light.min.css";
+  styleLight.href = "/static/highlight/styles/xcode.min.css";
 
   var styleDark = document.createElement("link");
   styleDark.rel = "stylesheet";
-  styleDark.href = "//cdn.staticfile.org/highlight.js/11.7.0/styles/stackoverflow-dark.min.css";
+  // styleDark.href = "//cdn.staticfile.org/highlight.js/11.7.0/styles/stackoverflow-dark.min.css";
+  styleDark.href = "/static/highlight/styles/tokyo-night-dark.min.css";
 
   if (document.querySelector("body").classList.contains("theme-dark")) {
     document.head.appendChild(styleDark);

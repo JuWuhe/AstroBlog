@@ -102,7 +102,7 @@ featured: ture
 
 ## C++复制
 
-```C++
+```cpp
 class ENGINE_API AActor:public UObject
 {
 	UPROPERTY(replicated)

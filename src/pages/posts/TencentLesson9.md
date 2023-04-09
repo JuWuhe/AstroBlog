@@ -9,7 +9,7 @@ cover:
     square: 'https://oss.insyent.today/1.jpg'
     alt: 'cover'
 tags: ["游戏开发", "客户端", "UnrealEngine"]
-theme: 'light'
+theme: 'dark'
 featured: ture
 ---
 
@@ -89,7 +89,7 @@ featured: ture
 
 - 节点实例内存
 
-  ```c++
+  ```cpp
   struct FBTFocusMemory
   {
       //节点运行时临时数据结构
@@ -106,7 +106,6 @@ featured: ture
   }
   ```
 
-  
 
 ## 场景查询系统 EQS
 

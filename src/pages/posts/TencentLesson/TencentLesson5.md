@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/MarkdownPost.astro'
+layout: '../../../layouts/MarkdownPost.astro'
 title: 腾讯游戏学院 | 骨骼动画
 pubDate: 2021-10-17
 description: 'UE的Animation'
@@ -81,7 +81,6 @@ featured: ture
   - `BlendPosesByBool`和`BlendPosesByInt`：类似Switch Case
   - `LayeredBlendPerBone`：可以由指定某个骨骼开始对BasePose进行覆盖，覆盖时可以选择LocalSpace或MeshSpace
   - `MakeDynamicAdditive`：动态生成叠加型Pose，ApplyAdditive的反向操作，输出为两个输入Pose的差
-  - ![image-20211107103837952](C:\Users\10499\AppData\Roaming\Typora\typora-user-images\image-20211107103837952.png)
 
 - 空间转换 Space Controls
 

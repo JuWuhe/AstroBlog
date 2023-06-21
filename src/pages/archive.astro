@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArchivePostList from "../layouts/ArchivePostList.astro";
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await Astro.glob("./posts/**/*.md");
 const tags = ["Unity", "UnrealEngine", "游戏开发"];
 const posts = [];
 

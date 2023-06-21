@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/MarkdownPost.astro'
+layout: '../../../layouts/MarkdownPost.astro'
 title: 腾讯游戏学院 | 网络同步
 pubDate: 2021-10-17
 description: 'UE的Animation'

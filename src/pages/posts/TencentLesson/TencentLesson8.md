@@ -1,12 +1,12 @@
 ---
-layout: '../../layouts/MarkdownPost.astro'
+layout: '../../../layouts/MarkdownPost.astro'
 title: 腾讯游戏学院 | 渲染基础
 pubDate: 2021-10-17
 description: 'UE的Animation'
 author: 'Insyent居无何'
 cover:
-    url: 'https://oss.insyent.today/2.jpg'
-    square: 'https://oss.insyent.today/2.jpg'
+    url: 'https://oss.insyent.today/8.jpg'
+    square: 'https://oss.insyent.today/8.jpg'
     alt: 'cover'
 tags: ["游戏开发", "客户端", "UnrealEngine"]
 theme: 'light'

@@ -1,12 +1,12 @@
 ---
-layout: '../../layouts/MarkdownPost.astro'
+layout: '../../../layouts/MarkdownPost.astro'
 title: 腾讯游戏学院 | AI技术
 pubDate: 2021-10-17
 description: 'UE的Animation'
 author: 'Insyent居无何'
 cover:
-    url: 'https://oss.insyent.today/1.jpg'
-    square: 'https://oss.insyent.today/1.jpg'
+    url: 'https://oss.insyent.today/9.jpg'
+    square: 'https://oss.insyent.today/9.jpg'
     alt: 'cover'
 tags: ["游戏开发", "客户端", "UnrealEngine"]
 theme: 'dark'

@@ -1,8 +1,8 @@
 ---
-layout: '../../layouts/MarkdownPost.astro'
+layout: '../../../layouts/MarkdownPost.astro'
 title: 腾讯游戏学院 | UMG界面
 pubDate: 2021-10-17
-description: 'UE的UI —— UMG'
+description: 'UE的UMG'
 author: 'Insyent居无何'
 cover:
     url: 'https://oss.insyent.today/4.jpg'

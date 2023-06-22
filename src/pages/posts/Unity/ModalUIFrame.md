@@ -19,7 +19,7 @@ featured: ture
 
 # 概念图
 
-![|inline](https://oss.insyent.today/ModalUIFrame.png)
+![|inline](/images/ModalUIFrame.png)
 
 # 代码详解
 
@@ -29,7 +29,7 @@ featured: ture
 
 基本属性如下
 
-```C#
+```csharp
 public abstract class BasePanel
 {
 	public UIType UIType { get; private set; }
@@ -45,7 +45,7 @@ public abstract class BasePanel
       *注：BasePanel 的 UIType 不可以声明为 static ，因为派生类与基类共享静态成员*
   - PanelManager 的接口接收一个 BasePanel 类型变量，在模块内部完成该面板的生成与成员的初始化，具体的下文再说
 
-```C#
+```csharp
     protected BasePanel(UIType uiType)
     {
         UIType = uiType;
@@ -65,7 +65,7 @@ public abstract class BasePanel
     - 这个设计是考虑到面板在有进入动效和退出动效时（比如淡入淡出）
       销毁Object、取消模态状态 等上层 PanelManager 对该面板的管理行为的触发时机
 
-```C#
+```csharp
     public virtual void OnEnter(Action onEnterFinished = null)
     {
     }    
@@ -90,7 +90,7 @@ public abstract class BasePanel
 - 生成面板的必要数据
   - 这里给出一个简单直接的方法，在 UIController 模块中通过 `Resources.Load` 生成，于是必要的数据就是 Prefabs 的 路径
 
-```c#
+```csharp
     public string Path { get; private set; }
     public UIType(string path)
     {
@@ -103,7 +103,7 @@ public abstract class BasePanel
     除了 PanelManager 管理的需要回调，面板自身也会有相应的在 
     **退出完成后** **销毁执行前**需要处理的逻辑
 
-```C#
+```csharp
 public Action OnDestroy;
 ```
 
@@ -118,20 +118,20 @@ public Action OnDestroy;
 - 必要的数据成员
   - 存储面板的数据结构
 
-```C#
+```csharp
 private readonly Dictionary<UIType, GameObject> dicUI;
 ```
 
 -  该 UIController 创建的所有面板的 Canvas
 
-```C#
+```csharp
 private readonly GameObject parentCanvas;
 ```
 
 - 必要的方法
   - 构造函数
 
-```C#
+```csharp
     public UIController(GameObject canvas)
     {
         dicUI = new Dictionary<UIType, GameObject>();
@@ -141,7 +141,7 @@ private readonly GameObject parentCanvas;
 
 - 获取/创建一个 UI 面板
 
-```C#
+```csharp
 public GameObject GetSingleUI(UIType type)
 {
     if (!parentCanvas)
@@ -156,7 +156,7 @@ public GameObject GetSingleUI(UIType type)
 
 - 销毁一个 UI 面板
 
-```C#
+```csharp
     public void DestroyUI(UIType type)
     {
         if (!dicUI.ContainsKey(type))
@@ -175,14 +175,14 @@ public GameObject GetSingleUI(UIType type)
 
 - UI 在屏幕上的 堆叠 显然是 栈 式结构，最后弹出的 UI 必然是最先退出的（模态的情况下），于是有
 
-```C#
+```csharp
 private readonly Stack<BasePanel> stackPanel;
 public bool HasPanelInStack => stackPanel.Count > 0;
 ```
 
 - 同时PanelManager将 构造并独有 UIController 组件，用于管理面板
 
-```C#
+```csharp
     private readonly UIController uiController;
     public PanelManager(GameObject canvas)
     {
@@ -198,7 +198,7 @@ public bool HasPanelInStack => stackPanel.Count > 0;
       - 一个主动回调上层模块退出方法的机制，通常用在面板的退出按钮上
 
 
-```C#
+```csharp
 public GameObject Push(BasePanel nextPanel)
 {
     if (HasPanelInStack)
@@ -251,7 +251,7 @@ public void Clean()
 
 职责：外部沟通UI系统的唯一途径，也就是UI系统的Shell，构造并独有PanelManager组件
 
-```C#
+```csharp
 public class UIManager : MonoBehaviour
 {
     private PanelManager PanelManager { get; set; }
@@ -269,7 +269,7 @@ public class UIManager : MonoBehaviour
 
 - 拥有该 UITool 的面板 GameObject
 
-```c#
+```csharp
     private readonly GameObject activePanel;
 
     public UITool(GameObject panel)
@@ -280,7 +280,7 @@ public class UIManager : MonoBehaviour
 
 - 获取或添加一个组件
 
-```C#
+```csharp
     public T GetOrAddComponent<T>() where T : Component
     {
         if (!activePanel.TryGetComponent(out T component))
@@ -294,7 +294,7 @@ public class UIManager : MonoBehaviour
 
 - 查找子对象
 
-```C#
+```csharp
 public GameObject FindChildGameObject(string name)
 {
     var trans = activePanel.GetComponentsInChildren<Transform>();
@@ -304,7 +304,7 @@ public GameObject FindChildGameObject(string name)
 
 - 子对象获取或添加一个组件
 
-```C#
+```csharp
 public T GetOrAddComponentInChildren<T>(string name) where T : Component
 {
     var child = FindChildGameObject(name);

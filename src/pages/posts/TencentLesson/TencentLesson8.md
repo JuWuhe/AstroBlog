@@ -13,9 +13,9 @@ theme: 'light'
 featured: ture
 ---
 
-# 渲染基础概念介绍
+# 1 渲染基础概念介绍
 
-## 按算法划分
+## 1.1 按算法划分
 
 - 光栅化
   - 投影
@@ -24,11 +24,11 @@ featured: ture
   - 光线求交、采样
   - 质量更好、全局光照
 
-## GPU编程语言 (Shader Language)
+## 1.2 GPU编程语言 (Shader Language)
 
 ​	OpenGL、Vulkan、DX、Metal
 
-## VS 顶点着色器
+## 1.3 VS 顶点着色器
 
 Vertex Shader
 
@@ -36,13 +36,13 @@ Vertex Shader
   - 模型空间->世界空间->视图空间->投影空间->NDC空间->屏幕空间
 - 顶点属性(顶点色、法向、切向等)计算
 
-## PS 像素着色器
+## 1.4 PS 像素着色器
 
 Pixel Shader
 
 ​	针对每个像素进行单独的着色计算，可使用的信息包括经过光栅化插值得到的顶点属性、相邻像素梯度信息等
 
-## 编写GPU程序的过程
+## 1.5 编写GPU程序的过程
 
 - 模型数据定义
 - CPU侧定义数据解析方式（管线状态等）
@@ -50,7 +50,7 @@ Pixel Shader
   - VS
   - PS
 
-## 术语
+## 1.6 术语
 
 - Draw Call
   - 一次数据准备、Shader设置输出到Render Target的过程
@@ -59,27 +59,27 @@ Pixel Shader
   - 一组渲染状态相似（Shader、Blend Mode等）的Draw Call集合
   - 减少频繁状态转换的消耗
 
-# UE4渲染基础
+# 2 UE4渲染基础
 
-## Render Pipeline
+## 2.1 Render Pipeline
 
 不是一成不变的，要根据游戏的需求（渲染质量、性能等）**自定义**最合适的管线
 
-## 材质系统
+## 2.2 材质系统
 
-### 材质定义
+### 2.2.1 材质定义
 
 反应物体与光交互的表面属性(Diffuse、Specular、Normal)的数据集(Texture)和算法
 
-### PBR（Physically Based Rendering）
+### 2.2.2 PBR（Physically Based Rendering）
 
 基于物理的渲染，利用真实世界的物理原理，通过各种数学方法推导并简化渲染方程，最终渲染出极具真实感画面的技术
 
-### 材质编辑器
+### 2.2.3 材质编辑器
 
 可视化Shader编辑工具
 
-### 材质节点
+### 2.2.4 材质节点
 
 - BaseColor：基础颜色
   - 接受RGB值
@@ -111,7 +111,7 @@ Pixel Shader
   - 透明度小于指定值(Opacity Mask Clip Value)的像素会被Clip掉
   - 需要设置对应的Blend Mode(Masked)
 
-### 材质属性
+### 2.2.5 材质属性
 
 - 材质域
   - Surface：最常用，Static Mesh、Skeletal Mesh、Landscape等
@@ -124,23 +124,23 @@ Pixel Shader
   - 透明：Translucent、Additive、Modulated
 - 着色模型
 
-### 材质实例
+### 2.2.6 材质实例
 
 - 母材质
   - 模板
 - 材质实例
   - 母材质实例化
 
-## 后处理
+## 2.3 后处理
 
 正常渲染结束后，对最终图像的后期加工
 
-### 操作方法
+### 2.3.1 操作方法
 
 - 将Post Process Volume 拖入场景
 - 选中PPV，在Details面板中选择需要激活的后处理效果
 
-## 粒子特效
+## 2.4 粒子特效
 
 - 激活Niagara插件
 - 从模板创建Niagara System
@@ -148,11 +148,11 @@ Pixel Shader
   - Emitter Update 设置发射器每帧更新的方式
   - Particle Spawn 设置粒子初始生成时的属性（Lifetime、Size、Rotation、Velocity）
 
-## 自定义Shader
+## 2.5 自定义Shader
 
 - Custom Node
 
-## 蓝图调用材质
+## 2.6 蓝图调用材质
 
 - 应用
   - 捏脸
@@ -163,7 +163,7 @@ Pixel Shader
   - 将Actor的PrimitiveComponent作为参数传给UI蓝图
   - 按钮事件创建动态材质实例(Create Dynamic Material Instance)，调用Set Texture Parameter Value改变材质贴图
 
-# 图形调试工具
+# 3 图形调试工具
 
 以Renderdoc为例
 

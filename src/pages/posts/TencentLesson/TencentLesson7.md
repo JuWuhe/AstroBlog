@@ -13,7 +13,7 @@ theme: 'light'
 featured: ture
 ---
 
-# 计算机网络基础
+# 1 计算机网络基础
 
 - Socket抽象层
   - TCP
@@ -40,7 +40,7 @@ featured: ture
 - C/S架构
   - 客户端之间的通信必须通过服务器
 
-# 数据同步基础
+# 2 数据同步基础
 
 - 帧同步
   - MOBA、RTS
@@ -73,21 +73,21 @@ featured: ture
   - 属性同步
     - 服务器更改，同步到其他所有客户端，解决数据冲突和安全性
 
-# UE4的网络同步
+# 3 UE4的网络同步
 
-## Unreal网络模式
+## 3.1 Unreal网络模式
 
 - NM_Standalone
 - NM_DedicatedServer
 - NM_ListenServer
 - NM_Client
 
-## Actor的复制
+## 3.2 Actor的复制
 
 - 属性更新
 - RPC
 
-## 权威/主控/模拟
+## 3.3 权威/主控/模拟
 
 - ClientA 
   - 主控A 模拟B 
@@ -100,7 +100,7 @@ featured: ture
 
 **Actor role/remote role **
 
-## C++复制
+## 3.4 C++复制
 
 ```cpp
 class ENGINE_API AActor:public UObject
@@ -124,7 +124,7 @@ void AActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 }
 ```
 
-## 属性复制条件
+## 3.5 属性复制条件
 
 |          条件           | 效果                                                         | 使用场合                                                     |
 | :---------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -137,7 +137,7 @@ void AActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 |   COND_InitialOrOwner   | 该属性将发送初始数据包，或者发送至actor所有者                |                                                              |
 |       COND_Custom       | 该属性没有特定条件，但需要通过`SetCustomIsActiveOverride`得到开启/关闭能力 | 需要自定义控制复制开关（比如玩家濒死状态才需要同步的数据等） |
 
-## RPC蓝图
+## 3.6 RPC蓝图
 
 - Multicast广播
 - Run on Server
@@ -145,7 +145,7 @@ void AActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 
 添加自定义事件，选中事件节点，在details面板中修改Replicates属性
 
-## 服务器调用RPC所有权
+## 3.7 服务器调用RPC所有权
 
 | Actor所有权  | 未复制         | NetMulticast               | Server         | Client                    |
 | ------------ | -------------- | -------------------------- | -------------- | ------------------------- |
@@ -153,7 +153,7 @@ void AActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 | Server-owned | 在服务器上运行 | 在服务器和所有客户端上运行 | 在服务器上运行 | 在服务器上运行            |
 | Unowned      | 在服务器上运行 | 在服务器和所有客户端上运行 | 在服务器上运行 | 在服务器上运行            |
 
-## 客户端调用RPC所有权
+## 3.8 客户端调用RPC所有权
 
 | Actor所有权                 | 未复制                   | NetMulticast             | Server         | Client                   |
 | --------------------------- | ------------------------ | ------------------------ | -------------- | ------------------------ |
@@ -162,12 +162,12 @@ void AActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimePr
 | Server-owned                | 在执行调用的客户端上运行 | 在执行调用的客户端上运行 | 丢弃           | 在执行调用的客户端上运行 |
 | Unowned                     | 在执行调用的客户端上运行 | 在执行调用的客户端上运行 | 丢弃           | 在执行调用的客户端上运行 |
 
-## 开火效果优化
+## 3.9 开火效果优化
 
 问题：Server端开火客户端能看到，客户端开火Server端看不到
 
 解决：添加两个CustomEvent，一个设定Server端运行RPC（ServerFire），一个广播RPC（MultiOnFire）
 
-# 网络优化监测工具
+# 4 网络优化监测工具
 
 Network Profiler

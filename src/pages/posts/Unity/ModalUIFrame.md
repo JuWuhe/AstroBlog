@@ -17,13 +17,13 @@ featured: ture
 - 模态：一种禁用父屏幕但保持可见的模式，用户必须与模态交互才能返回主屏幕
 - 完整含注释代码 + 示例 在[Github](https://github.com/JuWuhe/ModalUIFrame)上
 
-# 概念图
+# 1 概念图
 
 ![|inline](/images/ModalUIFrame.png)
 
-# 代码详解
+# 2 代码详解
 
-## BasePanel.cs
+## 2.1 BasePanel.cs
 
 职责：所有UIPanel的抽象父类
 
@@ -32,7 +32,7 @@ featured: ture
 ```csharp
 public abstract class BasePanel
 {
-	public UIType UIType { get; private set; }
+    public UIType UIType { get; private set; }
     public UITool UITool { get; private set; }
     protected Func<BasePanel,GameObject> createPanelAction;
     protected Action exitAction;
@@ -83,7 +83,7 @@ public abstract class BasePanel
     }
 ```
 
-## UIType.cs
+## 2.2 UIType.cs
 
 职责：保管面板的属性和生成面板的必要数据
 
@@ -111,7 +111,7 @@ public Action OnDestroy;
   - 如上文中提到的派生的具体面板类中使用 static 的 UIType 成员，那么这些属性使用枚举表示会更好操作
     这也是为什么这个类仍然被命名为 UIType 而不是 UIInfo
 
-## UIController.cs
+## 2.3 UIController.cs
 
 职责：创建和销毁面板的Object
 
@@ -169,7 +169,7 @@ public GameObject GetSingleUI(UIType type)
     }
 ```
 
-## PanelManager.cs
+## 2.4 PanelManager.cs
 
 职责：管理所有的面板
 
@@ -247,7 +247,7 @@ public void Clean()
 }
 ```
 
-## UIManager.cs
+## 2.5 UIManager.cs
 
 职责：外部沟通UI系统的唯一途径，也就是UI系统的Shell，构造并独有PanelManager组件
 
@@ -263,7 +263,7 @@ public class UIManager : MonoBehaviour
 }
 ```
 
-## UITool.cs
+## 2.6 UITool.cs
 
 职责：获取面板及其子物体的Component
 

@@ -13,7 +13,7 @@ theme: 'light'
 featured: ture
 ---
 
-# 动画概述
+# 1 动画概述
 
 ​	逐帧拍摄对象并连续播放而形成运动的影像技术
 
@@ -22,7 +22,7 @@ featured: ture
 - 骨骼动画：绑骨，编辑骨骼
 - 2D骨骼动画：角色图片拆分成若干图元，每个图元绑定对应骨骼
 
-# UE4动画蓝图
+# 2 UE4动画蓝图
 
 - 继承AnimInstance，或写一个继承AnimInstance的Cpp类后动画蓝图继承该Cpp类
 - 动画融合
@@ -32,7 +32,7 @@ featured: ture
   - `Animation Notify`
 - AnimGraph：树形结构来排列组合各动画控制节点
 
-# 常用动画类型
+# 3 常用动画类型
 
 - Animation Sequences：关键帧序列
   - 指定某一帧 `AnimNotify`
@@ -69,7 +69,7 @@ featured: ture
 
     > 注意:根骨动画需要客户端和服务器同时播，如果服务器不播动画或者时间差太多，客户端会被拉扯
 
-# 常见动画节点
+# 4 常见动画节点
 
 - 混合节点
 
@@ -92,7 +92,7 @@ featured: ture
 
     > 注意:频繁的快速转换不适合设置太长的转换融合
 
-# 动画Debug
+# 5 动画Debug
 
 - `ShowDebug Animation`
 - `ShowDebugToggleSubcategoryGraph`

@@ -13,7 +13,7 @@ theme: 'light'
 featured: ture
 ---
 
-# UMG
+# 1 UMG
 
 - UE4提供的界面开发系统
   - HUD：例如准星
@@ -22,7 +22,7 @@ featured: ture
 
 - UMG是对Slate的封装，方便界面编辑以及支持虚幻的垃圾回收机制
 
-# 基本概念
+# 2 基本概念
 
 - 控件Widget
 - UI蓝图
@@ -37,7 +37,7 @@ featured: ture
 
 - 渲染变形
 
-# 常用控件
+# 3 常用控件
 
 - 按钮 Button
 - 复选框 Check Box
@@ -57,12 +57,12 @@ featured: ture
   - 无效框 Invalidation Box
   - 限位框 Retainer Box
 
-# 界面动画
+# 4 界面动画
 
 - 添加动画轨道(每个控件可以有多个轨道)
 - 添加动画关键帧
 
-# 使用和控制编辑好的界面
+# 5 使用和控制编辑好的界面
 
 - 蓝图
   - 创建：`Create New Widget`
@@ -75,7 +75,7 @@ featured: ture
   - [SLuaunreal插件](https://github.com/Tencent/sluaunreal)
   - [Sluaunreal的完整demo](https://github.com/IriskaDev/slua_unreal_demo)
 
-# 拓展控件库
+# 6 拓展控件库
 
 > 自定义控件，避免重复造轮子
 
@@ -91,9 +91,9 @@ featured: ture
   - 在`SynchronizePropertie`s方法中同步U对象与S对象的对应属性
   - 在UMG编辑页面中使用此控件
 
-# 内存与性能
+# 7 内存与性能
 
-## 内存
+## 7.1 内存
 
 资源引用形成、解耦
 
@@ -108,7 +108,7 @@ featured: ture
   - 使用弱引用
   - 使用类似MVC的设计模式，独立实现界面的数据、视图以及控制逻辑
 
-## 性能
+## 7.2 性能
 
 -  不用或少用属性绑定
 - 尽量不在UI蓝图中实现Tick

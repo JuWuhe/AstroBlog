@@ -9,13 +9,13 @@ cover:
     square: 'https://oss.insyent.today/9.jpg'
     alt: 'cover'
 tags: ["游戏开发", "客户端", "UnrealEngine"]
-theme: 'dark'
+theme: 'light'
 featured: ture
 ---
 
-# AI框架简介
+# 1 AI框架简介
 
-## AI分层结构体系
+## 1.1 AI分层结构体系
 
 - 感知层：视觉、听觉、记忆信息、环境信息等
 - 决策层：决策后的命令下达到命令层
@@ -41,9 +41,9 @@ featured: ture
   - 动画系统：根据角色当前状态播放合适动画、多个动画序列融合、支持Inverted kinematics，根据约束条件计算匹配动作
   - 物理系统：场景碰撞查询功能、模拟一些物理效果
 
-# UE4行为树介绍
+# 2 UE4行为树介绍
 
-## 节点介绍
+## 2.1 节点介绍
 
 - Root
   - 行为树起始执行节点
@@ -73,7 +73,7 @@ featured: ture
   - Task
     - 行为树的叶子，是可执行的操作，没有输出链接
 
-## 数据存储和传递
+## 2.2 数据存储和传递
 
 - Blackboard
 
@@ -107,7 +107,7 @@ featured: ture
   ```
 
 
-## 场景查询系统 EQS
+## 2.3 场景查询系统 EQS
 
 - 用于收集场景相关数据
 - 可以使用 生成器（用户可自定义），通过各种用户定义的测试就这些数据进行测试，返回符合所有测试的最佳结果
@@ -119,7 +119,7 @@ featured: ture
 - 创建并编辑EQS
 - 行为树中运行EQS `Run EQS Query`
 
-# 参考资料
+# 3 参考资料
 
 https://docs.unrealengine.com/en-US/index.html
 
